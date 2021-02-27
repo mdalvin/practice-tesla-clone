@@ -1,0 +1,65 @@
+.headerBlock {
+    background: url('https://tesla.com/ns_videos/model-3-social.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+}
+
+.headerBlock_Info {
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+}
+
+.headerBlock_InfoText {
+    text-align: center;
+    flex: 1;
+}
+
+.headerBlock_InfoText > h1 {
+    color: #393c41;
+    font-weight: 500;
+    font-size: 38px;
+}
+
+.headerBlock_InfoText > h4 {
+    font-weight: 400;
+    font-size: 15px;
+    color:#5c5e62;
+}
+
+.headerBlock_InfoText > h4 > span {
+    padding-bottom: 4px;
+    padding-top: 15px;
+    border-bottom: 1px solid #000;
+    color: #393c41;
+    cursor: pointer;
+}
+
+.headerBlock_InfoText > h4 > span:hover {
+    border-bottom-width: 2px;
+    color: #000;
+}
+
+.headerBlock_actions {
+    margin-top: 330px;
+    display: flex;
+    gap: 20px;
+}
+
+.headerBlock_actions > button {
+    cursor: pointer;
+    border: none;
+    width: 260px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    outline: none;
+}
