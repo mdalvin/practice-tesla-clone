@@ -88,7 +88,7 @@ function Signup() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <ButtonPrimary name="Sign Up" type="submit" onClick={Signup} />
+          <ButtonPrimary name="Sign Up" type="submit" onClick={signUp} />
         </form>
         <div className="signup_divider">
           <hr />
