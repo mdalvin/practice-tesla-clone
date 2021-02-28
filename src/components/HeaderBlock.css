@@ -25,6 +25,7 @@
     color: #393c41;
     font-weight: 500;
     font-size: 38px;
+    margin-bottom: 5px;
 }
 
 .headerBlock_InfoText > h4 {
@@ -62,4 +63,18 @@
     text-transform: uppercase;
     font-weight: 600;
     outline: none;
+}
+
+.headerBlock_Primary {
+    background-color: #393c41;
+    color: #fff;
+    opacity: 0.9;
+    font-family: 'Montserrat';
+}
+
+.headerBlock_Secondary {
+    background-color: #fff;
+    color: #000;
+    opacity: 0.8;
+    font-family: 'Montserrat';
 }

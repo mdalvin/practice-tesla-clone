@@ -51,6 +51,7 @@
     position: relative;
     z-index: 2;
     cursor: pointer;
+    margin-top: 4px;
 }
 
 .header_link--hidden {

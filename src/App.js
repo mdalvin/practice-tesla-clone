@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -9,17 +9,32 @@ import {
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import HeaderBlock from "./components/HeaderBlock";
+import Login from "./components/Login";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+import Signup from "./components/Signup";
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const user = useSelector(selectUser);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <Router>
-    <div className="app">
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-      {isMenuOpen && <Menu/>}
-      <HeaderBlock/>
-    </div>
+      <div className="app">
+        <Switch>
+          <Route exact path="/">
+            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            {isMenuOpen && <Menu />}
+            <HeaderBlock />
+          </Route>
+          <Route exact path="/login">
+            {user ? <Redirect to='/teslaaccount'/> : <Login/>}
+          </Route>
+          <Route exact path="/signup">
+            <Signup/>
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 }
