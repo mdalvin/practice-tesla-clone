@@ -20,32 +20,39 @@ function Signup() {
     e.preventDefault();
 
     if (!firstName) {
-        return alert('Please input your first name.')
+      return alert("Please input your first name.");
     }
 
     if (!lastName) {
-        return alert('Please input your last name.')
+      return alert("Please input your last name.");
     }
 
-    auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
-        userAuth.user.updateProfile({
-            displayName: firstName
-        }).then(() => {
-            dispatch(login({
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        userAuth.user
+          .updateProfile({
+            displayName: firstName,
+          })
+          .then(() => {
+            dispatch(
+              login({
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
                 displayName: firstName,
-            }))
-            history.push('/teslaaccount');
-        })
-    }).catch((error) => alert(error.message));
+              })
+            );
+            history.push("/teslaaccount");
+          });
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
     <div className="signup">
       <div className="signup_header">
         <div className="signup_logo">
-          <Link>
+          <Link to="/">
             <img
               src="https://assets.website-files.com/5e8fceb1c9af5c3915ec97a0/5ec2f037975ed372da9f6286_Tesla-Logo-PNG-HD.png"
               alt=""
